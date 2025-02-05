@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Inventario</h1>
+        <div class="section">
+            <h2>Agregar Producto</h2>
+            <form action="{{ url_for('add_producto') }}" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="number" name="cantidad" placeholder="Cantidad" required>
+                <input type="text" name="ubicacion" placeholder="Ubicación" required>
+                <input type="number" name="precio" placeholder="Precio" step="0.01" required>
+                <button type="submit" style="background-color: #007bff; color: white;">Agregar Producto</button>
+            </form>
+        </div>
+        <div class="section">
+            <h2>Ver Productos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Ubicación</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    {% for id, producto in productos.items() %}
+                    <tr>
+                        <td>{{ id }}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.cantidad }}</td>
+                        <td>{{ producto.ubicacion }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>
+                            <a href="{{ url_for('edit_producto', id=id) }}" class="edit">Editar</a>
+                            <a href="{{ url_for('delete_producto', id=id) }}" class="delete">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

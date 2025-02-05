@@ -1,0 +1,97 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 20px;
+}
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #004d40;
+    border-bottom: 2px solid #00796b;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #00796b;
+    color: white;
+    font-weight: 700;
+}
+button {
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+button:hover {
+    opacity: 0.9;
+}
+.delete {
+    background-color: #e53935;
+    color: white;
+}
+.delete:hover {
+    background-color: #d32f2f;
+}
+.edit {
+    background-color: #43a047;
+    color: white;
+}
+.edit:hover {
+    background-color: #388e3c;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+input:focus {
+    border-color: #00796b;
+    outline: none;
+}
+.section {
+    margin-bottom: 30px;
+}
+.section:last-child {
+    margin-bottom: 0;
+}

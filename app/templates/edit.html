@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Producto</h1>
+        <form action="{{ url_for('edit_producto', id=id) }}" method="POST">
+            <input type="text" name="nombre" value="{{ producto.nombre }}" required>
+            <input type="number" name="cantidad" value="{{ producto.cantidad }}" required>
+            <input type="text" name="ubicacion" value="{{ producto.ubicacion }}" required>
+            <input type="number" name="precio" value="{{ producto.precio }}" step="0.01" required>
+            <button type="submit" style="background-color: #007bff; color: white;">Guardar Cambios</button>
+        </form>
+    </div>
+</body>
+</html>
