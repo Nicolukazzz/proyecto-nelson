@@ -57,10 +57,10 @@ th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #333;
-    max-width: 200px; /* Limita el ancho máximo de las celdas */
-    overflow: hidden; /* Evita que el texto desborde */
-    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    max-width: 200px;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
 }
 
 th {
@@ -128,7 +128,7 @@ input {
     transition: border-color 0.3s ease;
     background-color: #2d2d2d;
     color: #e0e0e0;
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    box-sizing: border-box; 
 }
 
 input:focus {
@@ -197,8 +197,8 @@ input:focus {
         position: relative;
         padding-left: 50%;
         text-align: right;
-        max-width: none; /* Elimina el límite de ancho en móviles */
-        white-space: normal; /* Permite que el texto se divida en varias líneas */
+        max-width: none; 
+        white-space: normal; 
     }
 
     td::before {
@@ -212,13 +212,12 @@ input:focus {
         color: #bb86fc;
     }
 
-    /* Botones responsive */
     button {
         width: 100%;
         margin: 5px 0;
     }
 
-    /* Formularios responsive */
+    
     form {
         gap: 10px;
     }
