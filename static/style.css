@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #121212;
@@ -31,19 +32,21 @@ h1 {
 }
 
 h1.small {
-    font-size: 2em; 
+    font-size: 2em;
 }
 
 h2 {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.5em;
+    font-size: 2em;
     color: #ffffff;
     border-bottom: 3px solid #bb86fc;
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-weight: 600;
+    text-align: center;
 }
 
+/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -54,6 +57,10 @@ th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #333;
+    max-width: 200px; /* Limita el ancho máximo de las celdas */
+    overflow: hidden; /* Evita que el texto desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 }
 
 th {
@@ -64,8 +71,9 @@ th {
     letter-spacing: 1px;
 }
 
+/* Botones */
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 5px;
     border: none;
     cursor: pointer;
@@ -103,6 +111,7 @@ button:hover {
     background-color: #45a049;
 }
 
+/* Formularios */
 form {
     display: flex;
     flex-direction: column;
@@ -119,9 +128,8 @@ input {
     transition: border-color 0.3s ease;
     background-color: #2d2d2d;
     color: #e0e0e0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
-
 
 input:focus {
     border-color: #bb86fc;
@@ -129,6 +137,7 @@ input:focus {
     box-shadow: 0 0 8px rgba(187, 134, 252, 0.3);
 }
 
+/* Secciones */
 .section {
     margin-bottom: 30px;
 }
@@ -137,7 +146,7 @@ input:focus {
     margin-bottom: 0;
 }
 
-
+/* Animaciones */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -152,7 +161,7 @@ input:focus {
 /* Estilos responsive */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2em; 
+        font-size: 2em;
     }
 
     h1.small {
@@ -160,19 +169,20 @@ input:focus {
     }
 
     h2 {
-        font-size: 1.2em; 
+        font-size: 1.5em;
     }
 
     .container {
         padding: 15px;
     }
 
+    /* Tablas responsive */
     table, thead, tbody, th, td, tr {
-        display: block; 
+        display: block;
     }
 
     th {
-        display: none; 
+        display: none;
     }
 
     tr {
@@ -187,6 +197,8 @@ input:focus {
         position: relative;
         padding-left: 50%;
         text-align: right;
+        max-width: none; /* Elimina el límite de ancho en móviles */
+        white-space: normal; /* Permite que el texto se divida en varias líneas */
     }
 
     td::before {
@@ -200,11 +212,13 @@ input:focus {
         color: #bb86fc;
     }
 
+    /* Botones responsive */
     button {
         width: 100%;
         margin: 5px 0;
     }
 
+    /* Formularios responsive */
     form {
         gap: 10px;
     }
