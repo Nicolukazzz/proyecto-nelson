@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Producto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <!-- Fuentes de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
     <!-- Iconos de FontAwesome -->
@@ -15,11 +14,13 @@
     <div class="container">
         <h2>Editar Producto</h2>
         <form action="{{ url_for('edit_producto', id=id) }}" method="POST">
-            <input type="text" name="nombre" value="{{ producto.nombre }}" required>
-            <input type="number" name="cantidad" value="{{ producto.cantidad }}" required>
-            <input type="text" name="ubicacion" value="{{ producto.ubicacion }}" required>
-            <input type="number" name="precio" value="{{ producto.precio }}" step="0.01" required>
-            <button type="submit" style="background-color: #007bff; color: white;">Guardar Cambios</button>
+            <input type="text" name="nombre" value="{{ producto.nombre }}" placeholder="Nombre" required>
+            <input type="number" name="cantidad" value="{{ producto.cantidad }}" placeholder="Cantidad" required>
+            <input type="text" name="ubicacion" value="{{ producto.ubicacion }}" placeholder="Ubicación" required>
+            <input type="number" name="precio" value="{{ producto.precio }}" placeholder="Precio" step="0.01" required>
+            <button type="submit">
+                <i class="fas fa-save"></i> Guardar Cambios
+            </button>
         </form>
     </div>
 </body>

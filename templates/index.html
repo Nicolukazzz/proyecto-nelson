@@ -41,12 +41,12 @@
                 <tbody id="product-list">
                     {% for id, producto in productos.items() %}
                     <tr>
-                        <td>{{ id }}</td>
-                        <td>{{ producto.nombre }}</td>
-                        <td>{{ producto.cantidad }}</td>
-                        <td>{{ producto.ubicacion }}</td>
-                        <td>{{ producto.precio }}</td>
-                        <td>
+                        <td data-label="ID">{{ id }}</td>
+                        <td data-label="Nombre">{{ producto.nombre }}</td>
+                        <td data-label="Cantidad">{{ producto.cantidad }}</td>
+                        <td data-label="Ubicación">{{ producto.ubicacion }}</td>
+                        <td data-label="Precio">{{ producto.precio }}</td>
+                        <td data-label="Acciones">
                             <a href="{{ url_for('edit_producto', id=id) }}" class="edit">
                                 <i class="fas fa-edit"></i> Editar
                             </a>
@@ -60,13 +60,5 @@
             </table>
         </div>
     </div>
-
-    <script>
-        // Reducir el tamaño del título después de cargar la página
-        window.onload = function() {
-            const title = document.getElementById('main-title');
-            title.classList.add('small');
-        };
-    </script>
 </body>
 </html>
