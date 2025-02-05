@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Inventario</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- Fuentes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Gestión de Inventario</h1>
+        <h1 id="main-title">Gestión de Inventario</h1>
         <div class="section">
             <h2>Agregar Producto</h2>
             <form action="{{ url_for('add_producto') }}" method="POST">
@@ -17,7 +20,9 @@
                 <input type="number" name="cantidad" placeholder="Cantidad" required>
                 <input type="text" name="ubicacion" placeholder="Ubicación" required>
                 <input type="number" name="precio" placeholder="Precio" step="0.01" required>
-                <button type="submit" style="background-color: #007bff; color: white;">Agregar Producto</button>
+                <button type="submit" style="background-color: #bb86fc; color: #121212;">
+                    <i class="fas fa-plus"></i> Agregar Producto
+                </button>
             </form>
         </div>
         <div class="section">
@@ -42,8 +47,12 @@
                         <td>{{ producto.ubicacion }}</td>
                         <td>{{ producto.precio }}</td>
                         <td>
-                            <a href="{{ url_for('edit_producto', id=id) }}" class="edit">Editar</a>
-                            <a href="{{ url_for('delete_producto', id=id) }}" class="delete">Eliminar</a>
+                            <a href="{{ url_for('edit_producto', id=id) }}" class="edit">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <a href="{{ url_for('delete_producto', id=id) }}" class="delete">
+                                <i class="fas fa-trash"></i> Eliminar
+                            </a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -51,5 +60,13 @@
             </table>
         </div>
     </div>
+
+    <script>
+        // Reducir el tamaño del título después de cargar la página
+        window.onload = function() {
+            const title = document.getElementById('main-title');
+            title.classList.add('small');
+        };
+    </script>
 </body>
 </html>

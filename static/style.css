@@ -1,97 +1,161 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f4f8;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: #e0e0e0;
 }
+
 .container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     max-width: 900px;
     width: 100%;
+    animation: fadeIn 0.5s ease-in-out;
 }
+
 h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
+    font-family: 'Manrope', sans-serif;
+    font-size: 4em; /* Título grande al inicio */
     text-align: center;
-    color: #00796b;
-    margin-bottom: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: 700;
+    transition: font-size 0.5s ease; /* Transición para reducir el tamaño */
 }
+
+h1.small {
+    font-size: 2.5em; /* Título más pequeño después de cargar */
+}
+
 h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    color: #004d40;
-    border-bottom: 2px solid #00796b;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 2em;
+    color: #ffffff;
+    border-bottom: 3px solid #bb86fc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
+
 th, td {
-    padding: 12px;
+    padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #333;
 }
+
 th {
-    background-color: #00796b;
-    color: white;
+    background-color: #bb86fc;
+    color: #121212;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
 button {
-    padding: 12px 20px;
+    padding: 12px 24px;
     margin: 5px;
     border: none;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
+
 button:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 .delete {
-    background-color: #e53935;
+    background-color: #ff5555;
     color: white;
 }
+
 .delete:hover {
-    background-color: #d32f2f;
+    background-color: #ff3333;
 }
+
 .edit {
-    background-color: #43a047;
+    background-color: #4caf50;
     color: white;
 }
+
 .edit:hover {
-    background-color: #388e3c;
+    background-color: #45a049;
 }
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
+
 input {
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #333;
+    border-radius: 8px;
     width: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
 }
+
 input:focus {
-    border-color: #00796b;
+    border-color: #bb86fc;
     outline: none;
+    box-shadow: 0 0 8px rgba(187, 134, 252, 0.3);
 }
+
 .section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
+
 .section:last-child {
     margin-bottom: 0;
 }
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de reducción del título */
+@keyframes shrinkTitle {
+    from {
+        font-size: 4em;
+    }
+    to {
+        font-size: 2.5em;
+    }
+}
+
+/* Iconos para botones */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
