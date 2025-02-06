@@ -36,8 +36,9 @@ def add_producto():
     nombre = request.form['nombre']
     cantidad = request.form['cantidad']
     ubicacion = request.form['ubicacion']
+    fecha_de_vencimiento = request.form['fecha_de_vencimiento']
     precio = request.form['precio']
-    productos[producto_id] = {'nombre': nombre, 'cantidad': cantidad, 'ubicacion': ubicacion, 'precio': precio}
+    productos[producto_id] = {'nombre': nombre, 'cantidad': cantidad, 'ubicacion': ubicacion, 'fecha_de_vencimiento': fecha_de_vencimiento ,'precio': precio}
     producto_id += 1
     return redirect(url_for('index'))
 
@@ -48,6 +49,7 @@ def edit_producto(id):
         productos[id]['nombre'] = request.form['nombre']
         productos[id]['cantidad'] = request.form['cantidad']
         productos[id]['ubicacion'] = request.form['ubicacion']
+        productos[id]['fecha_de_vencimiento'] = request.form['fecha_de_vencimiento']
         productos[id]['precio'] = request.form['precio']
         return redirect(url_for('index'))
     return render_template('edit.html', id=id, producto=productos[id])
