@@ -60,7 +60,7 @@ th, td {
     max-width: 200px;
     overflow: hidden; 
     text-overflow: ellipsis; 
-    white-space: nowrap; 
+    white-space: normal; /* Cambiado a normal para permitir saltos de línea */
 }
 
 th {
@@ -217,7 +217,6 @@ input:focus {
         margin: 5px 0;
     }
 
-    
     form {
         gap: 10px;
     }
